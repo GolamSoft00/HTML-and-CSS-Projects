@@ -1,0 +1,201 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #0f111d;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: white;
+}
+
+.menu a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #00ff80;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 47px;
+  font-weight: bold;
+}
+
+/* ✅ Typing Animation (Once) with cursor removed after end */
+.typing-text {
+  font-size: 28px;
+  margin: 10px 0 20px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ff80;
+  width: 0;
+  animation: typing 3.5s steps(30, end) 1 forwards, hideCursor 0.2s ease 3.6s forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes hideCursor {
+  to { border-right: 2px solid transparent; }
+}
+
+.green-bold {
+  color: #00ff80;
+  font-weight: bold;
+}
+
+.green-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #00ff80;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.download-btn {
+  background-color: #00ff80;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  box-shadow: 0 0 10px #00ff80;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ff80, 0 0 40px #00ff80;
+}
+
+.social-icons a {
+  color: #00ff80;
+  font-size: 18px;
+  margin-right: 15px;
+  border: 1px solid #00ff80;
+  border-radius: 50%;
+  padding: 8px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #00ff80;
+  color: #0f111d;
+}
+
+/* Hero Image Container */
+.hero-image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+/* Profile Image */
+.hero-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: fadeInZoom 2s ease-in-out forwards;
+  opacity: 0;
+  object-fit: cover;
+}
+
+/* Screenshot Style Circle Border (Half Border) */
+.circle-border {
+  width: 300px;
+  height: 300px;
+  border: 4px solid #00ff80;
+  border-top: none;
+  border-right: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: spin 6s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeInZoom {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-text, .hero-image {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 30px;
+  }
+}
